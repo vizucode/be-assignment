@@ -1,57 +1,147 @@
-# Take home assignment
+
+<br />
+<div align="center">
+
+<h3 align="center">ConcentrateAI Test</h3>
+
+<p align="center">
+    Simple banking application that have feature transfer and withdraw, creating a account and secure authorization
+</div>
+
+<!-- TABLE OF CONTENTS -->
+
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#sequencediagram">Sequence Diagram</a></li>
+    <li><a href="#erd">ERD</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
+
+<!-- ABOUT THE PROJECT -->
+
+## About The Project
+
+Simple banking application that have feature transfer and withdraw, creating a account and secure authorization
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Built With
+
+* Golang
+* Gin Framework
+* Docker
+* Supabase
+* PostgreSQL
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+
+## Getting Started
+
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+This is an example of how to list things you need to use the software and how to install them.
+
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
+
+### Installation
+
+1. Get a free API Key at [https://example.com](https://example.com)
+2. Clone the repo
+   ```sh
+   git clone https://github.com/github_username/repo_name.git
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Enter your API in `config.js`
+   ```js
+   const API_KEY = 'ENTER YOUR API';
+   ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- USAGE EXAMPLES -->
+
+## Usage
+
+For usage i have prepared the live server for demonstration and swagger UI documentation
+
+_For more documentation, please refer to the [swaggerUI](https://example.com)_
+_For more demonstration, please hit to hit https://testing.com_
+
+login with user credential:
+
+email: admin@gmail.com
+password: admin12345
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SEQUENCE DIAGRAM -->
+
+## Sequence Diagram
 
 
-## Description:
-Build 2 Backend services which manages user’s accounts and transactions (send/withdraw). 
+### Auth
+[![Auth Sequence Diagram][Auth Sequence Diagram]](https://firebasestorage.googleapis.com/v0/b/personal-website-1d263.appspot.com/o/concentrateAI%2Fsequence-auth.png?alt=media&token=ada33fd5-0f65-4aa8-bf5b-f643193c689b)
 
-In Account Manager service, we have:
-- User: Login with Id/Password
-- Payment Account: One user can have multiple accounts like credit, debit, loan...
-- Payment History: Records of transactions
+### Create Account
+[![Create Account][Create Account]](https://firebasestorage.googleapis.com/v0/b/personal-website-1d263.appspot.com/o/concentrateAI%2Fcreate-account.png?alt=media&token=b561a7e4-f5f2-4524-9498-fba3282716b8)
 
-In Payment Manager service, we have:
-- Transaction: Include basic information like amount, timestamp, toAddress, status...
-- We have a core transaction process function, that will be executed by `/send` or `/withdraw` API:
+### Send Transfer
+[![Send Transfer][Send Transfer]](https://firebasestorage.googleapis.com/v0/b/personal-website-1d263.appspot.com/o/concentrateAI%2Fsend-transfer.png?alt=media&token=07521e5d-9832-461d-91d2-e9090f8fceff)
 
-```js
-function processTransaction(transaction) {
-    return new Promise((resolve, reject) => {
-        console.log('Transaction processing started for:', transaction);
+### Withdraw Transfer
+[![Withdraw][Withdraw]](https://firebasestorage.googleapis.com/v0/b/personal-website-1d263.appspot.com/o/concentrateAI%2Fwithdraw.png?alt=media&token=534b3019-5af0-45cc-817d-daecc2c2479c)
 
-        // Simulate long running process
-        setTimeout(() => {
-            // After 30 seconds, we assume the transaction is processed successfully
-            console.log('transaction processed for:', transaction);
-            resolve(transaction);
-        }, 30000); // 30 seconds
-    });
-}
+### Get Transaction
+[![Transactions][Transactions]](https://firebasestorage.googleapis.com/v0/b/personal-website-1d263.appspot.com/o/concentrateAI%2Fget-all-transaction.png?alt=media&token=9710ca99-f72f-42a0-931d-ca3cab71ea2a)
 
-// Example usage
-let transaction = { amount: 100, currency: 'USD' }; // Sample transaction input
-processTransaction(transaction)
-    .then((processedTransaction) => {
-        console.log('transaction processing completed for:', processedTransaction);
-    })
-    .catch((error) => {
-        console.error('transaction processing failed:', error);
-    });
-```
+### Get Accounts
+[![Get Accounts][Get Accounts]](https://firebasestorage.googleapis.com/v0/b/personal-website-1d263.appspot.com/o/concentrateAI%2Fget-accounts.png?alt=media&token=886f76e9-8d54-4b47-8548-57b814fe6db7)
 
-Features:
-- Users need to register/log in and then be able to call APIs.
-- APIs for 2 operations send/withdraw. Account statements will be updated after the transaction is successful.
-- APIs to retrieve all accounts and transactions per account of the user.
-- Write Swagger docs for implemented APIs (Optional)
 
-### Tech-stack:
-- Recommend using authentication 3rd party: Supertokens, Supabase...
-- `NodeJs/Golang` for API server (`Fastify/Gin` framework is the best choices)
-- `PostgreSQL/MongoDB` for Database. Recommend using `Prisma` for ORM.
-- `Docker` for containerization. Recommend using `docker-compose` for running containers.
- 
-## Target:
-- Good document/README to describe your implementation.
-- Make sure app functionality works as expected. Run and test it well.
-- Containerized and run the app using Docker.
-- Using `docker-compose` or any automation script to run the app with single command is a plus.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ERD -->
+
+## ERD
+
+[![ERD][ERD]](https://firebasestorage.googleapis.com/v0/b/personal-website-1d263.appspot.com/o/concentrateAI%2Fconcreate-ai-test.png?alt=media&token=db5031ff-f7fd-4cd7-a32c-5f669a28936c)
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- CONTACT -->
+
+## Contact
+
+Hafiz Iqbal Sahrunizar - havisiqbalsyah@gmail.com
+
+Project Link: [\[https://github.com/github_username/repo_name](https://github.com/vizucode)](https://github.com/vizucode)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
