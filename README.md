@@ -74,7 +74,8 @@ Instalation Guide
 For usage i have prepared the live server for demonstration and swagger UI documentation
 
 _For more documentation, please refer to the [swaggerUI](https://app.swaggerhub.com/apis/HAVISIQBALSYAH/ConcentrateAI/1.0.0)_
-_For more demonstration, please hit to hit https://testing.com_
+
+_For more demonstration, here_
 
 login with user credential:
 
