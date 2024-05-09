@@ -42,6 +42,7 @@ Simple banking application that have feature transfer and withdraw, creating a a
 ### Built With
 
 * Golang
+* Nginx
 * Gin Framework
 * Docker
 * Supabase
