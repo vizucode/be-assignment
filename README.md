@@ -105,27 +105,26 @@ password: admin12345
 
 ### Auth
 
-[![Auth Sequence Diagram][Auth Sequence Diagram]](https://firebasestorage.googleapis.com/v0/b/personal-website-1d263.appspot.com/o/concentrateAI%2Fsequence-auth.png?alt=media&token=ada33fd5-0f65-4aa8-bf5b-f643193c689b)
+![Auth Sequence Diagram](https://firebasestorage.googleapis.com/v0/b/personal-website-1d263.appspot.com/o/concentrateAI%2Fsequence-auth.png?alt=media&token=ada33fd5-0f65-4aa8-bf5b-f643193c689b)
 
 ### Create Account
 
-[![Create Account][Create Account]](https://firebasestorage.googleapis.com/v0/b/personal-website-1d263.appspot.com/o/concentrateAI%2Fcreate-account.png?alt=media&token=b561a7e4-f5f2-4524-9498-fba3282716b8)
+![Create Account](https://firebasestorage.googleapis.com/v0/b/personal-website-1d263.appspot.com/o/concentrateAI%2Fcreate-account.png?alt=media&token=b561a7e4-f5f2-4524-9498-fba3282716b8)
 
 ### Send Transfer
 
-[![Send Transfer][Send Transfer]](https://firebasestorage.googleapis.com/v0/b/personal-website-1d263.appspot.com/o/concentrateAI%2Fsend-transfer.png?alt=media&token=07521e5d-9832-461d-91d2-e9090f8fceff)
+![Send Transfer](https://firebasestorage.googleapis.com/v0/b/personal-website-1d263.appspot.com/o/concentrateAI%2Fsend-transfer.png?alt=media&token=07521e5d-9832-461d-91d2-e9090f8fceff)
 
 ### Withdraw Transfer
 
-[![Withdraw][Withdraw]](https://firebasestorage.googleapis.com/v0/b/personal-website-1d263.appspot.com/o/concentrateAI%2Fwithdraw.png?alt=media&token=534b3019-5af0-45cc-817d-daecc2c2479c)
+![Withdraw Transfer](https://firebasestorage.googleapis.com/v0/b/personal-website-1d263.appspot.com/o/concentrateAI%2Fwithdraw.png?alt=media&token=534b3019-5af0-45cc-817d-daecc2c2479c)
 
 ### Get Transaction
-
-[![Transactions][Transactions]](https://firebasestorage.googleapis.com/v0/b/personal-website-1d263.appspot.com/o/concentrateAI%2Fget-all-transaction.png?alt=media&token=9710ca99-f72f-42a0-931d-ca3cab71ea2a)
+![Get Transaction](https://firebasestorage.googleapis.com/v0/b/personal-website-1d263.appspot.com/o/concentrateAI%2Fget-all-transaction.png?alt=media&token=9710ca99-f72f-42a0-931d-ca3cab71ea2a)
 
 ### Get Accounts
 
-[![Get Accounts][Get Accounts]](https://firebasestorage.googleapis.com/v0/b/personal-website-1d263.appspot.com/o/concentrateAI%2Fget-accounts.png?alt=media&token=886f76e9-8d54-4b47-8548-57b814fe6db7)
+![Get Account](https://firebasestorage.googleapis.com/v0/b/personal-website-1d263.appspot.com/o/concentrateAI%2Fget-accounts.png?alt=media&token=886f76e9-8d54-4b47-8548-57b814fe6db7)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -133,7 +132,7 @@ password: admin12345
 
 ## ERD
 
-[![ERD][ERD]](https://firebasestorage.googleapis.com/v0/b/personal-website-1d263.appspot.com/o/concentrateAI%2Fconcreate-ai-test.png?alt=media&token=db5031ff-f7fd-4cd7-a32c-5f669a28936c)
+![Get Account](https://firebasestorage.googleapis.com/v0/b/personal-website-1d263.appspot.com/o/concentrateAI%2Fconcreate-ai-test.png?alt=media&token=db5031ff-f7fd-4cd7-a32c-5f669a28936c)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
