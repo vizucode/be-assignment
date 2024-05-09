@@ -126,6 +126,6 @@ password: admin12345
 
 Hafiz Iqbal Sahrunizar - havisiqbalsyah@gmail.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Github Profile: [https://github.com/vizucode](https://github.com/vizucode)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
