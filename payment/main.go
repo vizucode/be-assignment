@@ -1,17 +1,24 @@
 package main
 
 import (
-	"fmt"
-	"net/http"
+	"os"
+	errorhandling "paymentservice/app/middlewares/error_handling"
+	"paymentservice/app/router/rest"
+	"strings"
+
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
+	server := gin.Default()
+	port := os.Getenv("PORT")
+	if strings.EqualFold(port, "") {
+		port = ":8081"
+	}
 
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Content-Type", "application/json")
-		w.Write([]byte("Hello From Payment Service"))
-	})
+	server.Use(errorhandling.ErrorHandler())
 
-	fmt.Println("Server running on port 8081")
-	http.ListenAndServe(":8081", nil)
+	rest.NewRest().Register(server)
+
+	server.Run(port)
 }
