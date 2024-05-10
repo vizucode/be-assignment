@@ -122,7 +122,7 @@ _For more documentation, please refer to the [swaggerUI](https://app.swaggerhub.
 
 ## ERD
 
-![Get Account](https://firebasestorage.googleapis.com/v0/b/personal-website-1d263.appspot.com/o/concentrateAI%2Fconcreate-ai-test.png?alt=media&token=db5031ff-f7fd-4cd7-a32c-5f669a28936c)
+![Get Account](https://firebasestorage.googleapis.com/v0/b/personal-website-1d263.appspot.com/o/concentrateAI%2Fconcreate-ai-test.png?alt=media&token=f94998d9-23c4-434c-9308-af49a0336c07)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
