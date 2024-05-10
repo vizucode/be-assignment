@@ -81,9 +81,9 @@ make dev down
 
 ## Usage
 
-For usage i have prepared the live server for demonstration and swagger UI documentation
+For swagger UI documentation
 
-_For more documentation, please refer to the [swaggerUI](https://app.swaggerhub.com/apis/HAVISIQBALSYAH/ConcentrateAI/1.0.0)_
+_For more documentation, please refer to the [APIDOG](https://tpdlhcvjhe.apidog.io)_
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
