@@ -62,6 +62,7 @@ To get started installing and using this app, you must first follow these steps.
 - Make sure you have Docker installed on your machine.
 - Copy the `.env-example` file and create a `.env` file. Fill in all the required variables.
 - We use port 5432 for PostgreSQL and port 80 for Nginx, so make sure there are no conflicting ports.
+- Please Install Makefile [Makefile](https://www.gnu.org/software/make/) if you doesn't installed yet.
 
 ### Installation
 
