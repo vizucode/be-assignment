@@ -54,19 +54,28 @@ Simple banking application that have feature transfer and withdraw, creating a a
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+To get started installing and using this app, you must first follow these steps. It's important as the app might not run otherwise!
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-
+- Register and log in to Supabase to obtain the API key and URI. This is necessary to connect Supabase to our app.
+- Make sure you have Docker installed on your machine.
+- Copy the `.env-example` file and create a `.env` file. Fill in all the required variables.
+- We use port 5432 for PostgreSQL and port 80 for Nginx, so make sure there are no conflicting ports.
 
 ### Installation
 
-Instalation Guide
+#### Starting the docker compose
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+```bash
+make dev up
+```
+
+##### Stop the docker compose
+
+```bash
+make dev down
+```
 
 <!-- USAGE EXAMPLES -->
 
@@ -76,12 +85,6 @@ For usage i have prepared the live server for demonstration and swagger UI docum
 
 _For more documentation, please refer to the [swaggerUI](https://app.swaggerhub.com/apis/HAVISIQBALSYAH/ConcentrateAI/1.0.0)_
 
-_For more demonstration, here_
-
-login with user credential:
-
-email: admin@gmail.com
-password: admin12345
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -106,6 +109,7 @@ password: admin12345
 ![Withdraw Transfer](https://firebasestorage.googleapis.com/v0/b/personal-website-1d263.appspot.com/o/concentrateAI%2Fwithdraw.png?alt=media&token=534b3019-5af0-45cc-817d-daecc2c2479c)
 
 ### Get Transaction
+
 ![Get Transaction](https://firebasestorage.googleapis.com/v0/b/personal-website-1d263.appspot.com/o/concentrateAI%2Fget-all-transaction.png?alt=media&token=9710ca99-f72f-42a0-931d-ca3cab71ea2a)
 
 ### Get Accounts

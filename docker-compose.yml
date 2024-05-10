@@ -1,0 +1,73 @@
+version: '3.8'
+
+services:
+  nginx:
+    build:
+      context: ./nginx/
+      dockerfile: Dockerfile
+    container_name: nginxservice
+    ports:
+      - 80:80
+    restart: always
+    depends_on:
+      - userservice
+      - paymentservice
+    networks:
+      - simplebank_network
+  userservice:
+    build:  
+      context: ./user/
+      dockerfile: Dockerfile
+    container_name: userservice
+    restart: always
+    ports:
+      - 8081
+    depends_on:
+      - psql
+    networks:
+      - simplebank_network
+    environment:
+      - DB_HOST=${DB_HOST}
+      - DB_NAME=${DB_NAME}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - SUPABASE_URI=${SUPABASE_URI}
+      - SUPABASE_API_KEY=${SUPABASE_API_KEY}
+  paymentservice:
+    build: 
+      context: ./payment/
+      dockerfile: Dockerfile
+    container_name: paymentservice
+    restart: always
+    ports:
+      - 8082
+    depends_on:
+      - psql
+    networks:
+      - simplebank_network
+    environment:
+      - DB_HOST=${DB_HOST}
+      - DB_NAME=${DB_NAME}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+  psqlservice:
+    image: postgres:15.7
+    container_name: psqlservice
+    restart: always
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    ports:
+      - 5432:5432
+    volumes:
+      - simplebank_volume:/var/lib/postgres/data
+    networks:
+      - simplebank_network
+
+volumes:
+  simplebank_volume:
+
+networks:
+  simplebank_network:
+    driver: bridge
