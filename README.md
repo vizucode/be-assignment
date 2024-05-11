@@ -98,7 +98,7 @@ _For more documentation, please refer to the [APIDOG](https://tpdlhcvjhe.apidog.
 
 ### Auth
 
-![Auth Sequence Diagram](https://firebasestorage.googleapis.com/v0/b/personal-website-1d263.appspot.com/o/concentrateAI%2Fsequence-auth.png?alt=media&token=ada33fd5-0f65-4aa8-bf5b-f643193c689b)
+![Auth Sequence Diagram](https://firebasestorage.googleapis.com/v0/b/personal-website-1d263.appspot.com/o/concentrateAI%2Fconcreate-ai-test.png?alt=media&token=b13ff781-1cb3-48f1-9119-89a8412f26df)
 
 ### Create Account
 
