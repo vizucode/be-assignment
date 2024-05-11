@@ -25,4 +25,5 @@ type IAccount interface {
 type ITransaction interface {
 	GetAllTransaction(ctx context.Context, email string) (resp []domain.Transaction, err error)
 	Send(ctx context.Context, send domain.Send) (resp domain.Transaction, err error)
+	Withdraw(ctx context.Context, withdraw domain.Withdraw) (resp domain.Transaction, err error)
 }

@@ -43,3 +43,25 @@ func (r *rest) Send(c *gin.Context) {
 
 	r.ResponseJson(c, "success send transaction", transactionResp, nil)
 }
+
+func (r *rest) Withdraw(c *gin.Context) {
+	email, isExist := c.Get("email")
+	if !isExist {
+		c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"message": "email not found"})
+	}
+
+	var Withdraw domain.Withdraw
+	err := c.ShouldBindBodyWithJSON(&Withdraw)
+	if err != nil {
+		panic(err)
+	}
+
+	Withdraw.OwnerEmail = email.(string)
+
+	transactionResp, err := r.Transaction.Withdraw(c, Withdraw)
+	if err != nil {
+		panic(err)
+	}
+
+	r.ResponseJson(c, "success withdraw", transactionResp, nil)
+}

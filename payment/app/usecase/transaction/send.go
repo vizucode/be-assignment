@@ -27,6 +27,7 @@ func (uc *transactionst) Send(ctx context.Context, send domain.Send) (resp domai
 		return domain.Transaction{}, err
 	}
 
+	time.Sleep(5 * time.Second)
 	_, err = uc.repo.CreateTransaction(ctx, models.Transaction{
 		Amount:            send.AmountTransfer,
 		CurrencyType:      send.CurrencyType,
