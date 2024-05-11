@@ -7,7 +7,9 @@ import (
 	"user_service/app/repositories/postgresql"
 	"user_service/app/repositories/supabase"
 	"user_service/app/router/rest"
+	account "user_service/app/usecase/account"
 	"user_service/app/usecase/auth"
+	useraccount "user_service/app/usecase/user_account"
 	"user_service/config/database"
 
 	SUPABASE "github.com/nedpals/supabase-go"
@@ -33,9 +35,13 @@ func main() {
 
 	// usecase
 	auth := auth.NewAuth(supabase, postgresql)
+	userAccount := useraccount.NewUserAccount(postgresql)
+	account := account.NewAccount(postgresql)
 
 	rest.NewRest(
 		auth,
+		account,
+		userAccount,
 	).Register(server)
 
 	server.Run(port)

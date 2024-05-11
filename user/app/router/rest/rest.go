@@ -10,14 +10,20 @@ import (
 )
 
 type rest struct {
-	Auth usecase.IAuth
+	Auth        usecase.IAuth
+	Account     usecase.IAccount
+	UserAccount usecase.IUserAccount
 }
 
 func NewRest(
 	Auth usecase.IAuth,
+	Account usecase.IAccount,
+	UserAccount usecase.IUserAccount,
 ) *rest {
 	return &rest{
-		Auth: Auth,
+		Auth:        Auth,
+		Account:     Account,
+		UserAccount: UserAccount,
 	}
 }
 
@@ -39,6 +45,10 @@ func (r *rest) Register(server *gin.Engine) {
 	v1.GET("/verify-email", r.VerifyEmail)
 	v1.GET("/email-authenticated", r.SuccessAuthenticated)
 	v1.POST("/reset-password", r.ResetPassword)
+
+	v1.GET("/types/accounts", authhandling.AuthMiddleware(), r.GetAllTypeAccount)
+	v1.GET("/accounts", authhandling.AuthMiddleware(), r.GetAllUserAccount)
+	v1.POST("/accounts", authhandling.AuthMiddleware(), r.CreateUserAccount)
 
 	v1.GET("/dummy", authhandling.AuthMiddleware(), func(ctx *gin.Context) {
 

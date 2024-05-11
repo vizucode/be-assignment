@@ -12,3 +12,12 @@ type IAuth interface {
 	ResetPassword(ctx context.Context, email string) (err error)
 	VerifyAuth(ctx context.Context, tokenHash string, verifyType string) (resp domain.Auth, err error)
 }
+
+type IUserAccount interface {
+	GetUserAccount(ctx context.Context, email string) (resp []domain.UserAccount, err error)
+	CreateUserAccount(ctx context.Context, email string, userAccount domain.UserAccount) (resp domain.UserAccount, err error)
+}
+
+type IAccount interface {
+	GetAllTypeAccount(ctx context.Context) (resp []domain.Account, err error)
+}

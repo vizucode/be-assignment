@@ -17,4 +17,9 @@ type IRepoAuth interface {
 type IRepoDatabase interface {
 	CreateUser(ctx context.Context, user models.Users) (resp models.Users, err error)
 	UpdateUser(ctx context.Context, selectedField []string, user models.Users) (resp models.Users, err error)
+	GetUser(ctx context.Context, email string) (resp models.Users, err error)
+	GetAllTypeAccount(ctx context.Context) (resp []models.Account, err error)
+	FindTypeAccount(ctx context.Context, typeAccountId int) (resp models.Account, err error)
+	GetUserAccount(ctx context.Context, userId int) (resp []models.UserAccount, err error)
+	CreateUserAccount(ctx context.Context, userAccount models.UserAccount) (resp models.UserAccount, err error)
 }
