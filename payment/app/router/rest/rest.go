@@ -2,15 +2,31 @@ package rest
 
 import (
 	"net/http"
+	authhandling "paymentservice/app/middlewares/auth_handling"
+	"paymentservice/app/usecase"
 
 	"github.com/gin-gonic/gin"
 )
 
 type rest struct {
+	Auth        usecase.IAuth
+	Account     usecase.IAccount
+	UserAccount usecase.IUserAccount
+	Transaction usecase.ITransaction
 }
 
-func NewRest() *rest {
-	return &rest{}
+func NewRest(
+	Auth usecase.IAuth,
+	Account usecase.IAccount,
+	UserAccount usecase.IUserAccount,
+	Transaction usecase.ITransaction,
+) *rest {
+	return &rest{
+		Auth:        Auth,
+		Account:     Account,
+		UserAccount: UserAccount,
+		Transaction: Transaction,
+	}
 }
 
 func (r *rest) ResponseJson(ctx *gin.Context, message string, data interface{}, metadata interface{}) {
@@ -22,5 +38,8 @@ func (r *rest) ResponseJson(ctx *gin.Context, message string, data interface{}, 
 }
 
 func (r *rest) Register(server *gin.Engine) {
+	// v1 := server.Group("/api/v1")
+	v1 := server.Group("/payment/api/v1")
 
+	v1.POST("/send", authhandling.AuthMiddleware(), r.Send)
 }
