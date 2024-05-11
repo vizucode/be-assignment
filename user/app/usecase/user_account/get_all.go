@@ -24,6 +24,7 @@ func (usecase *userAccount) GetUserAccount(ctx context.Context, email string) (r
 		for _, v := range v.Transactions {
 			historyTransaction = append(historyTransaction, domain.Transaction{
 				Id:                 v.ID,
+				UserId:             v.UserId,
 				AccountCode:        v.AccountCodeOwner,
 				TargetAccountCode:  v.TargetAccountCode,
 				AccountNameOwner:   v.AccountOwner.User.FirstName,
