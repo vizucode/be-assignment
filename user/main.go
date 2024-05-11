@@ -20,9 +20,9 @@ import (
 
 func main() {
 	server := gin.Default()
-	port := os.Getenv("PORTS")
+	port := os.Getenv("PORT")
 	if strings.EqualFold(port, "") {
-		port = ":80"
+		port = ":8081"
 	}
 	// configuration
 	server.Use(errorhandling.ErrorHandler())
