@@ -31,5 +31,22 @@ func GetDB() *gorm.DB {
 		&models.Transaction{},
 	)
 
+	var isDebit int64
+	var isCredit int64
+	var isLoan int64
+	db.Model(&models.Account{}).Where("account_type = ?", "DEBIT").Count(&isDebit)
+	db.Model(&models.Account{}).Where("account_type = ?", "CREDIT").Count(&isCredit)
+	db.Model(&models.Account{}).Where("account_type = ?", "LOAN").Count(&isLoan)
+
+	if isDebit < 1 {
+		db.Create(&models.Account{AccountType: "DEBIT", LimitBallance: 0, Status: true})
+	}
+	if isCredit < 1 {
+		db.Create(&models.Account{AccountType: "CREDIT", LimitBallance: 0, Status: true})
+	}
+	if isLoan < 1 {
+		db.Create(&models.Account{AccountType: "LOAN", LimitBallance: 0, Status: true})
+	}
+
 	return db
 }
