@@ -66,6 +66,9 @@ To get started installing and using this app, you must first follow these steps.
 
 ### Installation
 
+#### Notes
+If you're reluctant to register and gain access to Supabase, then I'll provide Supabase credentials so you can immediately use it without the need to register for Supabase again, simply by copying all the credentials from env-example and creating a .env file.
+
 #### Starting the docker compose
 
 ```bash
