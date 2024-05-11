@@ -1,7 +1,17 @@
 package supabase
 
-type supabase struct{}
+import (
+	supa "github.com/nedpals/supabase-go"
+)
 
-func NewSupabase() *supabase {
-	return &supabase{}
+type supabase struct {
+	supaClient *supa.Client
+}
+
+func NewSupabase(
+	supaClient *supa.Client,
+) *supabase {
+	return &supabase{
+		supaClient: supaClient,
+	}
 }
