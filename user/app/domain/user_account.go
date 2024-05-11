@@ -10,4 +10,6 @@ type UserAccount struct {
 	AccountCode   string    `json:"account_code"`
 	CreatedAt     time.Time `json:"created_at"`
 	UpdatedAt     time.Time `json:"updated_at"`
+
+	HistoryTransaction []Transaction `json:"history_transaction"`
 }

@@ -33,7 +33,7 @@ func (psql *postgre) FindTypeAccount(ctx context.Context, typeAccountId int) (re
 
 func (psql *postgre) GetUserAccount(ctx context.Context, userId int) (resp []models.UserAccount, err error) {
 
-	if err = psql.db.Model(&models.UserAccount{}).Where("user_id = ?", userId).Find(&resp).Error; err != nil {
+	if err = psql.db.Model(&models.UserAccount{}).Where("user_id = ?", userId).Preload("Transactions.AccountOwner.User").Preload("Transactions.AccountTarget.User").Find(&resp).Error; err != nil {
 		if !errors.Is(err, gorm.ErrRecordNotFound) {
 			return []models.UserAccount{}, customerror.NewCustomError(err.Error(), http.StatusInternalServerError)
 		}

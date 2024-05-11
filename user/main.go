@@ -9,6 +9,7 @@ import (
 	"user_service/app/router/rest"
 	account "user_service/app/usecase/account"
 	"user_service/app/usecase/auth"
+	"user_service/app/usecase/transaction"
 	useraccount "user_service/app/usecase/user_account"
 	"user_service/config/database"
 
@@ -37,11 +38,13 @@ func main() {
 	auth := auth.NewAuth(supabase, postgresql)
 	userAccount := useraccount.NewUserAccount(postgresql)
 	account := account.NewAccount(postgresql)
+	transaction := transaction.NewTransaction(postgresql)
 
 	rest.NewRest(
 		auth,
 		account,
 		userAccount,
+		transaction,
 	).Register(server)
 
 	server.Run(port)

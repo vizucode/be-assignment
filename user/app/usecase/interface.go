@@ -21,3 +21,7 @@ type IUserAccount interface {
 type IAccount interface {
 	GetAllTypeAccount(ctx context.Context) (resp []domain.Account, err error)
 }
+
+type ITransaction interface {
+	GetAllTransaction(ctx context.Context, email string) (resp []domain.Transaction, err error)
+}

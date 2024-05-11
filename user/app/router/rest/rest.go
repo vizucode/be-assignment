@@ -13,17 +13,20 @@ type rest struct {
 	Auth        usecase.IAuth
 	Account     usecase.IAccount
 	UserAccount usecase.IUserAccount
+	Transaction usecase.ITransaction
 }
 
 func NewRest(
 	Auth usecase.IAuth,
 	Account usecase.IAccount,
 	UserAccount usecase.IUserAccount,
+	Transaction usecase.ITransaction,
 ) *rest {
 	return &rest{
 		Auth:        Auth,
 		Account:     Account,
 		UserAccount: UserAccount,
+		Transaction: Transaction,
 	}
 }
 
@@ -49,6 +52,7 @@ func (r *rest) Register(server *gin.Engine) {
 	v1.GET("/types/accounts", authhandling.AuthMiddleware(), r.GetAllTypeAccount)
 	v1.GET("/accounts", authhandling.AuthMiddleware(), r.GetAllUserAccount)
 	v1.POST("/accounts", authhandling.AuthMiddleware(), r.CreateUserAccount)
+	v1.GET("/transactions", authhandling.AuthMiddleware(), r.GetAllTransaction)
 
 	v1.GET("/dummy", authhandling.AuthMiddleware(), func(ctx *gin.Context) {
 

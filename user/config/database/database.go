@@ -33,6 +33,7 @@ func GetDB() *gorm.DB {
 		&models.Users{},
 		&models.Account{},
 		&models.UserAccount{},
+		&models.Transaction{},
 	)
 
 	return db

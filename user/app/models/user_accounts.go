@@ -7,5 +7,9 @@ type UserAccount struct {
 	UserId      uint
 	AccountId   uint
 	AccountName string
-	AccountCode string
+	AccountCode string `gorm:"unique"`
+
+	User Users `gorm:"foreignKey:UserId;references:ID"`
+
+	Transactions []Transaction `gorm:"foreignKey:AccountCodeOwner;references:AccountCode"`
 }

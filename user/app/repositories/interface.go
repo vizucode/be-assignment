@@ -22,4 +22,5 @@ type IRepoDatabase interface {
 	FindTypeAccount(ctx context.Context, typeAccountId int) (resp models.Account, err error)
 	GetUserAccount(ctx context.Context, userId int) (resp []models.UserAccount, err error)
 	CreateUserAccount(ctx context.Context, userAccount models.UserAccount) (resp models.UserAccount, err error)
+	GetAllTransaction(ctx context.Context, email int) (resp []models.Transaction, err error)
 }
