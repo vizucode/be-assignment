@@ -38,8 +38,7 @@ func (r *rest) ResponseJson(ctx *gin.Context, message string, data interface{}, 
 }
 
 func (r *rest) Register(server *gin.Engine) {
-	// v1 := server.Group("/api/v1")
-	v1 := server.Group("/payment/api/v1")
+	v1 := server.Group("/api/v1")
 
 	v1.POST("/send", authhandling.AuthMiddleware(), r.Send)
 	v1.POST("/withdraw", authhandling.AuthMiddleware(), r.Withdraw)

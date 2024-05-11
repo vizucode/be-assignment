@@ -12,6 +12,6 @@ DB_USERNAME="postgres.qytwpijdbksagnkuqgay"
 DB_PASSWORD="DMLzDUfRz8M4L9h4"
 DB_PORT="5432"
 
-SUPABASE_URI="https://qytwpijdbksagnkuqgay.supabase.co"
+SUPABASE_URL="https://qytwpijdbksagnkuqgay.supabase.co"
 SUPABASE_API_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF5dHdwaWpkYmtzYWdua3VxZ2F5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUzNjE4NDIsImV4cCI6MjAzMDkzNzg0Mn0.vml4ckytjDbcsh07VgYSodEJLPVylqU8JGoeA4-X42U"
-JWT_SECRET="NpWjQULfM45+mhbsih+2l19jDckAkPuO5LO1a07S9JXBAq7bYXQawonwpjrYG7jFMmgxVS8C2HInYrXT8rSxAA=="
+SUPABASE_JWT_SECRET="NpWjQULfM45+mhbsih+2l19jDckAkPuO5LO1a07S9JXBAq7bYXQawonwpjrYG7jFMmgxVS8C2HInYrXT8rSxAA=="

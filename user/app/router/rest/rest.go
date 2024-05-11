@@ -39,8 +39,7 @@ func (r *rest) ResponseJson(ctx *gin.Context, message string, data interface{}, 
 }
 
 func (r *rest) Register(server *gin.Engine) {
-	// v1 := server.Group("/api/v1")
-	v1 := server.Group("/user/api/v1")
+	v1 := server.Group("/api/v1")
 
 	v1.POST("/signup", r.SignUp)
 	v1.POST("/signin", r.SignIn)

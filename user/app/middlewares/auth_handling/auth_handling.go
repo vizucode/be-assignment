@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"net/http"
+	"os"
 	"user_service/app/repositories/supabase"
 
 	SUPABASE "github.com/nedpals/supabase-go"
@@ -32,8 +33,7 @@ func AuthMiddleware() gin.HandlerFunc {
 			}
 
 			// hmacSampleSecret is a []byte containing your secret, e.g. []byte("my_secret_key")
-			// return []byte(os.Getenv("SUPABASE_JWT_SECRET")), nil
-			return []byte("NpWjQULfM45+mhbsih+2l19jDckAkPuO5LO1a07S9JXBAq7bYXQawonwpjrYG7jFMmgxVS8C2HInYrXT8rSxAA=="), nil
+			return []byte(os.Getenv("SUPABASE_JWT_SECRET")), nil
 		})
 
 		if err != nil {
@@ -45,8 +45,7 @@ func AuthMiddleware() gin.HandlerFunc {
 
 			if errors.Is(err, jwt.ErrTokenExpired) {
 				fmt.Println(err)
-				// supabaseClient := SUPABASE.CreateClient(os.Getenv("SUPABASE_URL"), os.Getenv("SUPABASE_API_KEY"), true)
-				supabaseClient := SUPABASE.CreateClient("https://qytwpijdbksagnkuqgay.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF5dHdwaWpkYmtzYWdua3VxZ2F5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTUzNjE4NDIsImV4cCI6MjAzMDkzNzg0Mn0.vml4ckytjDbcsh07VgYSodEJLPVylqU8JGoeA4-X42U", true)
+				supabaseClient := SUPABASE.CreateClient(os.Getenv("SUPABASE_URL"), os.Getenv("SUPABASE_API_KEY"), true)
 				authClient := supabase.NewSupabase(supabaseClient)
 
 				result, err := authClient.RefreshToken(context.Background(), tokenString, refreshToken)
